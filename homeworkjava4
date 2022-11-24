@@ -1,0 +1,37 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import static java.lang.Math.abs;
+import static java.lang.Math.sqrt;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double answer;
+        int m, l;
+        System.out.println("m: ");
+        m = scanner.nextInt();
+        System.out.println("n: ");
+        l = scanner.nextInt();
+        answer = 1;
+        if (l < 0) {
+            for (int i = l; i < 0; i++) {
+                answer /= m;
+            }
+            /*while (l < 0) {
+                answer /= m;
+                n++;
+            }*/
+        } else if (l > 0) {
+            for (int i = l; i > 0; i--) {
+                answer *= m;
+            }
+            /*while (l > 0) {
+                answer *= m;
+                l--;
+            }*/
+        } else {
+            System.out.println("1");
+            return;
+        }
+        System.out.println(answer);
+    }
+}
