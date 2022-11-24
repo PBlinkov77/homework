@@ -1,0 +1,32 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner x = new Scanner(System.in);
+        int day, month, year;
+        int tDay=24, tMonth=11, tYear=2022;
+        System.out.println("День рождения");
+        day = x.nextInt();
+        System.out.println("Месяц рождения: ");
+        month = x.nextInt();
+        System.out.println("Год рождения: ");
+        year = x.nextInt();
+        if (tDay < day) {
+            tDay = tDay+31-day;
+            tMonth --;
+        }
+        else {
+            tDay = tDay-day;
+        }
+        if (tMonth < month) {
+            tMonth = tMonth+12 -month;
+            tYear --;
+        }
+        else {
+            tMonth = tMonth-month;
+        }
+        tYear = tYear - year;
+        System.out.println(tYear + "years, "+ tMonth+ "months and "+tDay + "days");
+    }
+}
